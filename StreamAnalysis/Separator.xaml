@@ -1,0 +1,43 @@
+﻿<Window x:Class="ReliefAnalysis.Separator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Separator" Height="391.954" Width="626.437">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Separator Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Description" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="Type:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top"/>
+       
+        <CheckBox Content="Caculate surge time " Grid.Column="1" HorizontalAlignment="Left" Margin="26.092,10,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="237.471"/>
+        <TextBox Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="37.241,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="37.241,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
+        <ComboBox Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="37.241,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Horizontal"/>
+            <ComboBoxItem Content="Vertical"/>
+        </ComboBox>
+        
+        <Button Content="OK" Grid.Column="2" HorizontalAlignment="Left" Margin="37.241,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancel" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Input data" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
+

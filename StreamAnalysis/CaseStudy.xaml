@@ -1,0 +1,185 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ReliefAnalysis="clr-namespace:ReliefAnalysis" x:Class="ReliefAnalysis.CaseStudy"
+     
+        Title="Case Study" Height="589" Width="821" Loaded="Window_Loaded_1" Closing="MetroWindow_Closing_1">
+    
+
+
+    <DockPanel>
+        <TabControl x:Name="mainTab">
+            <TabItem Header="Base Case" Name="ti0">
+                <Grid Margin="0,-2,0,2">
+                    
+                    <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="59" Margin="143,10,0,0" AcceptsReturn="True" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="586"/>
+                    <Label Content="Description" HorizontalAlignment="Left" Margin="62,10,0,0" VerticalAlignment="Top"/>
+                    <TabControl HorizontalAlignment="Left" Height="234" Margin="62,89,0,0" VerticalAlignment="Top" Width="667">
+                        <TabItem Header="Feed">
+                            <Grid  Background="#FFE5E5E5">
+                                <DataGrid CanUserAddRows="False"  HeadersVisibility="Column" CanUserResizeColumns="False" AutoGenerateColumns="False" x:Name="gridStreamIn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="202" Width="657"  >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Stream" Binding="{Binding streamname}"/>
+                                        <DataGridTextColumn Header="Flow(Kg/hr)" Binding="{Binding weightflow}"/>
+                                        <DataGridTextColumn Header="Phase" Binding="{Binding vaporfraction}"/>
+                                        <DataGridTextColumn Header="Pressure(MpaG)" Binding="{Binding pressure}"/>
+                                        <DataGridTextColumn Header="Temp(C)" Binding="{Binding temperature}"/>
+                                        <DataGridTextColumn Header="Total Enthalpy(M*KJ/hr)" Binding="{Binding enthalpy}"/>
+                                        <DataGridTextColumn Header="Specific Enthalpy" Binding="{Binding spenthalpy}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Product">
+                            <Grid  Background="#FFE5E5E5">
+                                <DataGrid CanUserAddRows="False"  HeadersVisibility="Column" CanUserResizeColumns="False" AutoGenerateColumns="False" x:Name="gridStreamOut" HorizontalAlignment="Left" VerticalAlignment="Top" Height="202" Width="657">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Stream" Binding="{Binding streamname}"/>
+                                        <DataGridTextColumn Header="ProdType" Binding="{Binding prodtype}"/>
+                                        <DataGridTextColumn Header="Flow(Kg/hr)" Binding="{Binding weightflow}"/>
+                                        <DataGridTextColumn Header="Phase" Binding="{Binding vaporfraction}"/>
+                                        <DataGridTextColumn Header="Pressure(MpaG)" Binding="{Binding pressure}"/>
+                                        <DataGridTextColumn Header="Temp(C)" Binding="{Binding temperature}"/>
+                                        <DataGridTextColumn Header="Total Enthalpy(M*Kcal/hr)" Binding="{Binding enthalpy}"/>
+                                        <DataGridTextColumn Header="Specific Enthalpy" Binding="{Binding spenthalpy}"/>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Reboiler">
+                            <Grid  Background="#FFE5E5E5">
+                                <DataGrid CanUserAddRows="False"  HeadersVisibility="Column" CanUserResizeColumns="False" AutoGenerateColumns="False" x:Name="gridHeatIn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="202" Width="657">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding heatername}"/>
+                                        <DataGridTextColumn Header="Duty(MW)" Binding="{Binding heaterduty}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="Condenser">
+                            <Grid  Background="#FFE5E5E5">
+                                <DataGrid CanUserAddRows="False"  HeadersVisibility="Column" CanUserResizeColumns="False" AutoGenerateColumns="False" x:Name="gridHeatOut" HorizontalAlignment="Left" VerticalAlignment="Top" Height="202" Width="657">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Name" Binding="{Binding heatername}"/>
+                                        <DataGridTextColumn Header="Duty(MW)" Binding="{Binding heaterduty}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <GroupBox Header="Latent Heat" HorizontalAlignment="Left" Margin="62,357,0,0" VerticalAlignment="Top" Height="81" Width="348">
+                        <Grid HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="324" Margin="10,10,-2,-2">
+                            <TextBox x:Name="txtRunResult" HorizontalAlignment="Left" Height="25" Margin="53,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+                            <Label Content="KJ/Kg" HorizontalAlignment="Left" Margin="241,10,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+
+                    </GroupBox>
+                    <ProgressBar Name="progressBar" Margin="183,443,353,-4" Height="28" Visibility="Hidden"/>
+                    <Button x:Name="btnCheckData" Content="Check Data" HorizontalAlignment="Left" Margin="481,357,0,0" VerticalAlignment="Top" Width="115" Click="btnCheckData_Click" RenderTransformOrigin="0.443,1.36"/>
+                    <Button x:Name="btnRunCalculation" Content="Run Calculation" HorizontalAlignment="Left" Margin="614,357,0,0" VerticalAlignment="Top" Width="116" Click="btnRunCalculation_Click" RenderTransformOrigin="-0.25,1.364"/>
+                    <Button x:Name="btnExport" Content="Export to Excel" HorizontalAlignment="Left" Margin="614,403,0,0" VerticalAlignment="Top" Width="115" Click="btnExport_Click"/>
+                    <Button x:Name="btnLoadData" Content="Load Data" HorizontalAlignment="Left" Margin="481,403,0,0" VerticalAlignment="Top" Width="115" Click="btnLoadData_Click" RenderTransformOrigin="0.443,1.36"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Cooling Water Failure" Name="ti1">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reflux Failure" Name="ti2">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top"  x:Name="uc2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure" Name="ti3">
+        <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure2" Name="ti14">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc14"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure3" Name="ti15">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc15"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure4" Name="ti16">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc16"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure5" Name="ti17">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc17"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Partial Electrical Power Failure6" Name="ti18">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc18"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="General Electrical Power Failure" Name="ti4">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc4"/>
+                    </Grid>
+            </TabItem>
+
+            <TabItem Header="Instrument Air Failure" Name="ti5">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc5"/>
+                    </Grid>
+            </TabItem>
+
+            <TabItem Header="Outlet Blocked" Name="ti6">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc6"/>
+                    </Grid>
+            </TabItem>
+            <TabItem Header="PumpAround Failure" Name="ti7">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc7"/>
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Absorbent Lost" Name="ti8">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc8"/>
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Cold Feed Stop" Name="ti9">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc9" />
+                    </Grid>
+            </TabItem>
+
+            <TabItem Header="Automatic Controls Failure" Name="ti10">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc10"/>
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Abnormal Heat Input" Name="ti11">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc11"/>
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Heat Exchanger Rupture" Name="ti12">
+                <Grid>
+                    <ReliefAnalysis:UC_CaseStudy HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc12" />
+                    </Grid>
+            </TabItem>
+            <TabItem Header="Fire" Name="ti13">
+                <Grid>
+                    <ReliefAnalysis:UC_Fire HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" x:Name="uc13"/>
+                    </Grid>
+            </TabItem>
+            
+
+        </TabControl>
+
+    </DockPanel>
+</Window>

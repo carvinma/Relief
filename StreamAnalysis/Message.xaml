@@ -1,0 +1,29 @@
+﻿<Window x:Class="ReliefAnalysis.frmMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     
+        Title="Save" Height="173.839" Width="388">
+    
+
+    <Grid Background="Lavender">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+       
+            <Image  Source="images/question.ico" HorizontalAlignment="Left" Height="31" Margin="39,28,0,0" VerticalAlignment="Top" Width="40"/>
+            <TextBlock x:Name="tipcontent"   HorizontalAlignment="Left" Margin="84,32,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="30" Width="157" RenderTransformOrigin="0.5,0.5"/>
+        
+            <Button Name="Yes" Content="Yes" HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Top" Width="85" Click="yes_Click" Height="25" Grid.Row="1">            
+        </Button>
+        <Button Name="no" Content="No" HorizontalAlignment="Left" Margin="156,0,0,0" VerticalAlignment="Top" Width="85" Click="no_Click" Height="25" Grid.Row="1">            
+        </Button>
+        <Button Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="262,0,0,0" VerticalAlignment="Top" Width="85" Click="cancel_Click" Height="25" Grid.Row="1">
+           
+        </Button>
+
+    </Grid>
+</Window>

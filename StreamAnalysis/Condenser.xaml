@@ -1,0 +1,70 @@
+﻿<Window x:Class="ReliefAnalysis.Condenser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        Title="Condenser" Height="376" Width="554" Loaded="MetroWindow_Loaded_1">
+   
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Condenser Name:" HorizontalAlignment="Left" Margin="27,4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="61,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.464"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+        <Label Content="Total Duty(MW):" HorizontalAlignment="Left" Margin="35,80,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="157,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtBox_TextChanged"/>
+        <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="23" Margin="157,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="363" />
+        <TextBox x:Name="txtDuty" HorizontalAlignment="Left" Height="23" Margin="157,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtBox_TextChanged"/>
+       <GroupBox Header="Detail Duty" HorizontalAlignment="Left" Margin="267,117,0,0" VerticalAlignment="Top" Height="173" Width="253">
+            <Grid Margin="10,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="231*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Water:" HorizontalAlignment="Left"  Margin="35,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.356,-0.385" Grid.Column="1"/>
+                <Label Content="Air:" HorizontalAlignment="Left" Margin="54,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,-0.423" Grid.Column="1"/>
+                <Label Content="Wet Air:" HorizontalAlignment="Left" Margin="27,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox Name="txtWater" TextChanged="txtBox_TextChanged" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="89,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox Name="txtWetAir" TextChanged="txtBox_TextChanged" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="89,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox Name="txtAir" TextChanged="txtBox_TextChanged" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="89,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                <Label Content="Pump Abound:" HorizontalAlignment="Left" IsEnabled="False" Margin="4,112,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBox Name="txtPumpAbound" TextChanged="txtBox_TextChanged" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="89,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Duty Factor" HorizontalAlignment="Left" Margin="45,117,0,0" VerticalAlignment="Top" Height="173" Width="217">
+            <Grid Margin="-2,-7,2,7">
+                <Label Content="Water:" HorizontalAlignment="Left" Margin="49,13,0,0" VerticalAlignment="Top"/>
+                <Label Content="Air:" HorizontalAlignment="Left" Margin="68,44,0,0" VerticalAlignment="Top"/>
+                <Label Content="WetAir:" HorizontalAlignment="Left" Margin="44,78,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtWaterFactor" TextChanged="txtBox_TextChanged" HorizontalAlignment="Left" Height="23" Margin="109,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" RenderTransformOrigin="-0.081,0.5"/>
+                <TextBox Name="txtAirFactor" TextChanged="txtBox_TextChanged" HorizontalAlignment="Left" Height="23" Margin="109,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62"/>
+                <TextBox Name="txtWetAirFactor" TextChanged="txtBox_TextChanged" HorizontalAlignment="Left" Height="23" Margin="109,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62"/>
+                <TextBox Name="txtPumpAboundFactor" TextChanged="txtBox_TextChanged" HorizontalAlignment="Left" Height="23" Margin="109,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62"/>
+                <Label Content="Pump Abound:" HorizontalAlignment="Left" Margin="1,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.725,0.346"/>
+
+
+            </Grid>
+        </GroupBox>
+        </Grid>
+
+        <Grid Margin="0,53,0,0">
+            <Border BorderBrush="black"  BorderThickness="1" DockPanel.Dock="Bottom" Margin="0,-36,0,0">
+                <Grid Margin="0,-11,0,0">
+                    <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="btnOK_Click" Margin="353,18,0,0"/>
+                    <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="btnCancel_Click" Margin="440,18,0,0"/>
+                </Grid>
+            </Border>
+        </Grid>
+        </DockPanel>
+</Window>

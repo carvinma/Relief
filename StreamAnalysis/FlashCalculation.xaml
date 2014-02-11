@@ -1,0 +1,56 @@
+﻿<Window x:Class="ReliefAnalysis.FlashCalculation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Flash Calculation" Height="725.847" Width="585.057" Loaded="Window_Loaded_1">
+    <Grid Margin="0,0,0,13">
+        <Button Name="btnImport" Content="Import from Database" HorizontalAlignment="Left" Margin="128,12,0,0" VerticalAlignment="Top" Width="147" Click="btnImport_Click"/>
+        <Button Name="btnSave" Content="Save Result to Database" HorizontalAlignment="Left" Margin="320,12,0,0" VerticalAlignment="Top" Width="161" Click="btnSave_Click"/>
+        <Label Content="Calculation Name" HorizontalAlignment="Left" Margin="56,51,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="199,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="282"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="56,99,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="46" Margin="199,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="282"/>
+        <GroupBox Header="First Specification" HorizontalAlignment="Left" Margin="54,169,0,0" VerticalAlignment="Top" Height="117" Width="427">
+            <Grid HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="417" Margin="0,0,-2,-12">
+                <TextBox x:Name="txtPressure" HorizontalAlignment="Left" Height="23" Margin="147,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Mpag" HorizontalAlignment="Left" Margin="272,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.971,2.986"/>
+                <TextBox x:Name="txtTemp" HorizontalAlignment="Left" Height="23" Margin="146,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="C" HorizontalAlignment="Left" Margin="281,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="-8.624,0.211"/>
+                <RadioButton x:Name="rbTemp" GroupName="First" Content="Temp" HorizontalAlignment="Left" Margin="25,57,0,0" VerticalAlignment="Top" Width="83" Click="rbFirst_Click"/>
+                <RadioButton x:Name="rbPressure" GroupName="First"  Content="Pressure" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Width="83" Click="rbFirst_Click"/>
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Header="Second Specification" HorizontalAlignment="Left" Margin="54,291,0,0" VerticalAlignment="Top" Height="190" Width="427">
+            <Grid HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="417" Margin="0,0,-2,-12">
+                <TextBox x:Name="txtPressure2" HorizontalAlignment="Left" Height="23" Margin="147,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Mpag" HorizontalAlignment="Left" Margin="272,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.971,2.986"/>
+                <TextBox x:Name="txtTemp2" HorizontalAlignment="Left" Height="23" Margin="147,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="C" HorizontalAlignment="Left" Margin="281,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="-8.624,0.211"/>
+                <RadioButton GroupName="Second"  x:Name="rbTemp2" Content="Temp" HorizontalAlignment="Left" Margin="25,57,0,0" VerticalAlignment="Top" Width="83"/>
+                <RadioButton GroupName="Second" x:Name="rbPressure2" Content="Pressure" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Width="83"/>
+                <RadioButton GroupName="Second" x:Name="rbBubble" Content="Bubble Point" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top" Width="117"/>
+                <RadioButton GroupName="Second" x:Name="rbDew" Content="Dew Point" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Width="83"/>
+
+                <TextBox x:Name="txtDuty" HorizontalAlignment="Left" Height="23" Margin="147,133,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="MW" HorizontalAlignment="Left" Margin="281,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.971,2.986"/>
+                <RadioButton GroupName="Second" x:Name="rbDuty" Content="Duty" HorizontalAlignment="Left" Margin="25,140,0,0" VerticalAlignment="Top" Width="83"/>
+            </Grid>
+        </GroupBox>
+        <Button Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="71,499,0,0" VerticalAlignment="Top" Width="75" Click="btnRun_Click"/>
+        <Button Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="239,499,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="160" Margin="61,535,0,-12" VerticalAlignment="Top" Width="427">
+            <TabItem Header="Result Message" Margin="-2,-2,-144,-1">
+                <Grid Background="#FFE5E5E5" Margin="0,0,3,2">
+                    <Label Content="Enthalpy:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblFeedH" Content="" HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblVaporH" Content="" HorizontalAlignment="Left" Margin="98,31,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblLiqidH" Content="" HorizontalAlignment="Left" Margin="98,62,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lblTest" Content="" HorizontalAlignment="Left" Margin="198,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Enthalpy of vaporization:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>

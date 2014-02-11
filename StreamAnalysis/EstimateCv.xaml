@@ -1,0 +1,38 @@
+﻿<Window x:Class="ReliefAnalysis.EstimateCv"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Estimate Cv" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="63*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Value Type:" Grid.Column="1" HorizontalAlignment="Left" Margin="23.012,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89.878"/>
+        <Label Content="Value ID:" Grid.Column="1" HorizontalAlignment="Left" Margin="37.89,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75"/>
+        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="44.605,22.505,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Global"/>
+            <ComboBoxItem Content="Gate"/>
+            <ComboBoxItem Content="Butterfly"/>
+            <ComboBoxItem Content="Boll"/>
+            <ComboBoxItem Content="Check"/>
+        </ComboBox>
+        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="48.053,16.183,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="1.5"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <Label Content="in" Grid.Column="3" HorizontalAlignment="Left" Margin="0,16.183,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button Content="Estimate" Grid.Column="1" HorizontalAlignment="Left" Margin="37.89,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="44.605,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
